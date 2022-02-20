@@ -1,0 +1,180 @@
+// COLORS
+$very-dark-blue: hsl(235, 21%, 11%);
+$very-dark-desaturated-blue: hsl(235, 24%, 19%);
+$light-grayish-blue: hsl(234, 39%, 85%);
+$light-grayish-blue-hover: hsl(236, 33%, 92%);
+$dark-grayish-blue: hsl(234, 11%, 52%);
+$very-dark-grayish-blue: hsl(233, 14%, 35%);
+$very-dark-grayish-blue: hsl(237, 14%, 26%);
+
+$border-radius-sm: 3px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background-color: $very-dark-blue;
+
+  .todo {
+    &-app {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      width: 520px;
+      text-align: center;
+      margin: 128px auto;
+      padding-bottom: 32px;
+
+      h1 {
+        margin: 32px 0;
+        color: #fff;
+        font-size: 30px;
+        text-transform: uppercase;
+        text-shadow: 0px 7px 5px #000000;
+        transition: all 0.1s;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: all 0.2s;
+          text-shadow: 0px 15px 7px #000000;
+        }
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        cursor: pointer;
+        color: #fff;
+        margin-left: 10px;
+
+        .edit-icon {
+          margin-right: 10px;
+
+          &:hover {
+            filter: invert(84%) sepia(29%) saturate(5978%) hue-rotate(4deg)
+              brightness(109%) contrast(104%);
+          }
+        }
+
+        .delete-icon {
+          &:hover {
+            filter: invert(19%) sepia(100%) saturate(7069%) hue-rotate(1deg)
+              brightness(108%) contrast(117%);
+          }
+        }
+      }
+    }
+
+    &-form {
+      margin: 0 auto;
+      margin-bottom: 32px;
+      box-shadow: 0px 15px 15px 1px rgba(0, 0, 0, 0.5);
+      width: 90%;
+      border-radius: $border-radius-sm;
+      height: 50px;
+
+      &.edit {
+        width: 100%;
+        box-shadow: none;
+      }
+    }
+
+    &-input {
+      padding: 14px 32px 14px 16px;
+      border: none;
+      border-radius: $border-radius-sm 0 0 $border-radius-sm;
+      outline: none;
+      background-color: $very-dark-desaturated-blue;
+      color: $light-grayish-blue-hover;
+      width: 85%;
+      height: inherit;
+      font-size: 14px;
+      transition: all 0.1s;
+
+      &::placeholder {
+        color: $light-grayish-blue-hover;
+        opacity: 0.4;
+      }
+
+      /* &.edit {
+        
+      } */
+    }
+
+    &-btn {
+      padding: 14px;
+      border: none;
+      border-left: 2px solid $very-dark-grayish-blue;
+      border-radius: 0 $border-radius-sm $border-radius-sm 0;
+      cursor: pointer;
+      outline: none;
+      width: 15%;
+      height: inherit;
+      background-color: $very-dark-desaturated-blue;
+      color: $light-grayish-blue-hover;
+      text-transform: uppercase;
+
+      /* &.edit {
+        
+      } */
+
+      &:hover {
+        background-color: $very-dark-grayish-blue;
+        transition: all 0.2s;
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+    }
+
+    &-list {
+      margin: auto;
+      width: 90%;
+      box-shadow: 0px 15px 15px 2px rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+
+      &.edit {
+        box-shadow: none;
+      }
+    }
+
+    &-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+      color: $light-grayish-blue-hover;
+      padding: 14px 16px;
+      border-bottom: 1.5px solid $very-dark-grayish-blue;
+      width: 100%;
+      background-color: $very-dark-desaturated-blue;
+      transition: all 0.1s;
+      min-height: 50px;
+      font-size: 14px;
+
+      &.complete {
+        text-decoration: line-through;
+        opacity: 0.4;
+        transition: all 0.1s;
+      }
+
+      &:first-child {
+        border-radius: $border-radius-sm $border-radius-sm 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 $border-radius-sm $border-radius-sm;
+        border: none;
+      }
+    }
+  }
+}
